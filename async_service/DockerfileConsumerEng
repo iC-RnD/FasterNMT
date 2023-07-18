@@ -1,0 +1,25 @@
+# set base image (host OS)
+FROM pytorch/pytorch:1.9.1-cuda11.1-cudnn8-devel
+# EXPOSE 8000
+
+# RUN apt-get update
+# RUN apt install build-essential libicu-dev -y
+RUN mkdir /app
+WORKDIR /app
+
+COPY requirements.txt /app
+# RUN pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install -r requirements.txt
+
+COPY config /app/config
+COPY entity /app/entity
+COPY function /app/function
+COPY iclib /app/iclib
+COPY logs /app/logs
+COPY translate_inference /app/translate_inference
+COPY model/en-vi /app/model/en-vi
+COPY model/m2m100_418M /app/model/m2m100_418M
+COPY main_consumer_en.py /app
+
+RUN rm -r ~/.cache/pip/*
+CMD ["python", "main_consumer_en.py"]

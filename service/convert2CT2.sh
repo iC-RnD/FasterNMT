@@ -1,0 +1,3 @@
+#change the path for --model to yours (config.json   pytorch_model.bin  scheduler.pt  special_tokens_map.json  trainer_state.json  vocab.json optimizer.pt  rng_state.pth      sentencepiece.bpe.model  tokenizer_config.json    training_args.bin)
+ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/en-vi/ --quantization int8
+ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/zh-vi/ --quantization int8
