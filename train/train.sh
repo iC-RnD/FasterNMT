@@ -1,0 +1,12 @@
+CUDA_VISIBLE_DEVICES='2' python3 train_m2m_many2vi.py \
+    --load_data \
+    --model /home1/linhnguyen/NMT/translate_many2vi/models/checkpoint-zh_m2m/checkpoint-905000 \
+    --max_len 256 \
+    --save_step  1000 \
+    --epochs 1 \
+    --save_total_limit 2 \
+    --src_lang zh \
+    --tgt_lang vi \
+    --file_train /home1/linhnguyen/NMT/Data35000/zh_vi_42000_pkl_train \
+    --file_eval /home1/linhnguyen/NMT/Data35000/zh_vi_42000_pkl_eval \
+    --batch_size 16
