@@ -19,12 +19,10 @@ app = FastAPI(
     version="0.0.1"
 )
 
-
 class Content(BaseModel):
     doc: str = "Hello World!"
     src_lang: str = "en"
     tgt_lang: str = "vi"
-
 
 @app.post("/translate_enzh2vi")
 async def translate_enzh2vi(response: Response, doc: str, src_lang: str):
@@ -46,7 +44,6 @@ async def translate_enzh2vi(response: Response, doc: str, src_lang: str):
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
 
         return results
-
 
 @app.post("/translate_enzh2vi_content")
 async def translate_enzh2vi_content(response: Response, item: Content):
