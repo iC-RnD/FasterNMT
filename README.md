@@ -51,7 +51,7 @@ tokenizer.decode(tokenizer.convert_tokens_to_ids(target))
 | --- | --- | --- | --- | --- |
 | **m2m100_418M** | | | |
 |  Pytorch(torch==1.9.0+cu111) | 0.02306 | 3889Mb | 4.4Gb | 39.0205 |
-| **CTranslate2** (convert from m2m100_418M model) | | | |
+| **CTranslate2** (convert from zh2vi m2m100_418M model) | | | |
 | auto | 0.00622 | 2319Mb | 1.8Gb | 39.0205 |
 | int8 | 0.00397 | 847Mb | 2.1Gb | 39.6142 |
 | float16 | 0.00479 | 1359Mb | 2.5Gb | 38.8939 |
