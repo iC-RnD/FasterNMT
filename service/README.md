@@ -5,6 +5,12 @@ docker build -t translate-zh-en-to-vi .
 docker run -d --restart=always --name translate-zh-en-to-vi -p 1233:1233 --gpus '"device=3"' translate-zh-en-to-vi
 
 ```
+## Test
+CT2convert
+```
+ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/en-vi/ --quantization int8
+ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/en-vi/ --quantization int8
+```
 
 ## Link model
 172.16.10.240:
@@ -20,7 +26,7 @@ TOKENIZER = '/home/data/linhnguyen/linhnguyen/CT2_B12/m2m100_418M'
 CT2convert
 ```
 ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/en-vi/ --quantization int8
-ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/en-vi/ --quantization int8
+ct2-transformers-converter --model facebook/m2m100_418M --output_dir translate-en-zh-vi/models/zh-vi/ --quantization int8
 ```
 
 Inference
